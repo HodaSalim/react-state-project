@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Profile } from "./Profile";
+import { useState } from "react";
+
+const user = {
+  fullName: "Hannah Sminth",
+  bio: "a careere driven social media specialist that always aims to set the next trend to acheive your business objectives",
+  profession: "Social Media Manager",
+  imgSrc: "./Hannah.jpeg",
+  shows: false,
+};
 
 function App() {
+  const [profile, setProfile] = useState(user);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Profile profile={profile} setProfile={setProfile} />
+    </>
   );
 }
 
